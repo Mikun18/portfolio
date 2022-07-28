@@ -12,12 +12,12 @@ const Navbar = () => {
       <div className='navbar'>
       <div style={{display:'flex'}}>
             <img src="./Images/star.svg"  width='25'/>
-            <h2 style={{padding:'0 5px'}}>Mikun</h2>
+            <Link to='/' style={{padding:'0 5px'}} className='logo'>Mikun</Link>
           </div>
         <div>
           <Link to='/' className='nav-item'>Home</Link>
           <Link to='about' className='nav-item'>About</Link>
-          <a href='http://localhost:3000/#contact' className='nav-item'>Contacts</a>
+          <a href='https://mikun18.github.io/portfolio/#contact' className='nav-item'>Contacts</a>
         </div>
         <div style={{display:'flex', opacity:'0.5'}}>
          <a href='https://github.com/Mikun18?tab=repositories' target='_blank'><motion.img src="./Images/github.svg" whileHover={{scale:1.2}} style={{width:'30px'}}/></a>
