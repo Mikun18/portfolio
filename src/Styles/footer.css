@@ -1,0 +1,18 @@
+.footer{
+    background-color: grey;
+    padding: 30px 10%;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.footer-text img{
+    padding-bottom: 50px;
+}
+
+.footer-logo img{
+    width: 30px;
+    padding: 0 10px;
+    cursor: pointer;
+}

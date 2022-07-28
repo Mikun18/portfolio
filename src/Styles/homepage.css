@@ -1,0 +1,111 @@
+.hero-page{
+    margin: 0 8%;
+    margin-top: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'MS Sans Serif', Geneva, sans-serif;
+}
+
+.hero-text{
+    font-size: 30px;
+    width: 100%;
+}
+
+.sub-hero-text{
+    padding: 25px 0;
+    display: flex;
+    font-size: 25px;
+}
+
+.hero-btn-1{
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    padding: 12px 23px;
+    border: 1px black solid;
+    color: white;
+    background-color: black;
+}
+
+.hero-btn-1:hover{
+    text-decoration: underline;
+}
+
+.hero-btn-2{
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    padding: 12px 25px;
+    border: 1px black solid;
+}
+
+.hero-btn-2:hover{
+    text-decoration: underline;
+}
+
+.marquee-con{
+    transform: skewY(-2deg);
+
+}
+
+.marquee{
+    background-color: black;
+    margin-top: 10%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.marquee ul{
+    white-space: nowrap;
+    list-style: none;
+    padding: 30px 0px;
+}
+
+.marquee li{
+    display: inline;
+    padding: 20px;
+    color: white;
+}
+
+@media(max-width: 1280px){
+    .hero-text h2{
+        font-size: 40px;
+    }
+}
+
+@media(max-width: 1024px){
+    .hero-text h2{
+        font-size: 35px;
+    }
+
+    .hero-page{
+        margin: 0 8%;
+    }
+}
+
+@media(max-width: 942px){
+    .hero-text h2{
+        font-size: 29px;
+    }
+
+    .hero-text h4{
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 770px){
+    .hero-page{
+        flex-direction: column;
+        margin: 0 3%;
+        margin-top: 5%;
+    }
+
+    .hero-text h2{
+        font-size: 40px;
+    }
+
+    .sub-hero-text h4{
+        font-size: 15px;
+    }
+}

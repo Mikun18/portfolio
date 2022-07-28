@@ -1,0 +1,79 @@
+.navbar{
+    margin: 2% 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.nav-item{
+    margin-top: 0%;
+    text-decoration: none;
+    color: black;
+    margin: 0px 20px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.nav-item:hover{
+    border-bottom: 1px black solid;
+    /* text-decoration: underline; */
+    transition: 1s;
+}
+
+.let-talk{
+    /* margin-left: 32%; */
+    text-decoration: none;
+    color: black;
+    padding: 8px 23px;
+    border: 2px black solid;
+}
+
+.let-talk:hover{
+    background-color: black;
+    color: white;
+    transition: 1s;
+}
+
+.smaller-navbar{
+    display: none;
+}
+
+@media(max-width: 870px){
+    .navbar{
+      display: none;
+    }
+
+    .smaller-navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2% 8%;
+    }
+
+    .sidebar-bg{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar{
+        padding: 10% 5%;
+        background-color: #161513;
+        height: 100%;
+        margin-right: 60%;
+    }
+
+    .smaller-nav-item{
+        display: block;
+        text-decoration: none;
+        color: white;
+        margin: 0px 20px;
+        font-size: 30px;
+        cursor: pointer;
+        padding: 20px 0;
+    }
+  }
