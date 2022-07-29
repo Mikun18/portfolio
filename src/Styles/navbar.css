@@ -84,3 +84,15 @@
         padding: 20px 0;
     }
   }
+
+  @media(max-width: 640px){
+    .sidebar{
+        margin-right: 40%;
+    }
+  }
+
+  @media(max-width: 415px){
+    .sidebar{
+        margin-right: 30%;
+    }
+  }

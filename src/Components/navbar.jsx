@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
-import {Link, Outlet} from 'react-router-dom'
+import { Outlet} from 'react-router-dom'
 import '../Styles/navbar.css'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import '../index.css'
+import { HashLink as Link} from 'react-router-hash-link';
 
 const Navbar = () => {
   return (
@@ -17,7 +18,7 @@ const Navbar = () => {
         <div>
           <Link to='/' className='nav-item'>Home</Link>
           <Link to='about' className='nav-item'>About</Link>
-          <a href='https://mikun18.github.io/portfolio/#contact' className='nav-item'>Contacts</a>
+          <Link to='#contact' className='nav-item'>Contacts</Link>
         </div>
         <div style={{display:'flex', opacity:'0.5'}}>
          <a href='https://github.com/Mikun18?tab=repositories' target='_blank'><motion.img src="./Images/github.svg" whileHover={{scale:1.2}} style={{width:'30px'}}/></a>
@@ -54,7 +55,9 @@ const Navbar = () => {
           </div>
       </div>
         <div>
-          {showModal && <SideBar setShowModal={setShowModal}/>}
+          <AnimatePresence>
+           {showModal && <SideBar setShowModal={setShowModal}/>}
+          </AnimatePresence>
         </div>
 
     </section>
@@ -62,14 +65,34 @@ const Navbar = () => {
 }
 
 const SideBar = ({setShowModal}) => {
+
+  const boxVariant = {
+    hidden: {
+      x: "-100vw",
+    },
+    visible: {
+      x: 0,
+      transition: {
+        delay: 0.2,
+        when: "beforeChildren",
+        delayChildren: 0.1,
+        staggerChildren: 0.2,
+      },
+    },
+    close: {
+      x: "-100vw",
+      transition: { duration: 0.5 },
+    },
+  };
+  
   return(
     <section className='sidebar-bg'>
-      <div className='sidebar'>
+      <motion.div className='sidebar' variants={boxVariant} animate='visible' initial='hidden' exit='close'>
         <FontAwesomeIcon icon={faXmark} onClick={() => setShowModal(false)} style={{color:'white', fontSize:'60px', padding:'0 5%', cursor:'pointer'}}/>
         <Link to='/' className='smaller-nav-item' onClick={() => setShowModal(false)}>Home</Link>
         <Link to='about' className='smaller-nav-item' onClick={() => setShowModal(false)}>About</Link>
-        <a href='http://localhost:3000/#contact' className='smaller-nav-item' onClick={() => setShowModal(false)}>Contacts</a>
-      </div>
+        <Link to='/#contact' className='smaller-nav-item' onClick={() => setShowModal(false)}>Contacts</Link>
+      </motion.div>
     </section>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link'
 import '../Styles/homepage.css'
 import { motion } from 'framer-motion'
 import Portfolio from './portfolio'
@@ -50,7 +50,7 @@ const Homepage = () => {
 
               <div>
                 <button className='hero-btn-1'>Get a project?</button>
-                <a href='#contact' className='hero-btn-2'>Let's talk</a>
+                <Link to='#contact' className='hero-btn-2'>Let's talk</Link>
               </div>
           </motion.article>
 
